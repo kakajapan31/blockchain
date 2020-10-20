@@ -40,11 +40,5 @@ func NewBlock(data string, prevBlockHash []byte) *Block {
 }
 
 func NewGenesisBlock() *Block {
-	return &Block{
-		Timestamp:     time.Now().Unix(),
-		Data:          []byte("Genesis Block"),
-		PrevBlockHash: []byte{},
-		Hash:          nil,
-		Nonce:         0,
-	}
+	return NewBlock("Genesis Block", []byte{})
 }

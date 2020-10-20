@@ -52,10 +52,9 @@ func (pow *ProofOfWork) Run() (int, []byte) {
 		hashInt.SetBytes(hash[:])
 
 		if hashInt.Cmp(pow.target) == -1 {
-			break
+			return nonce, hash[:] // early return instead of break
 		}
 		nonce++
 	}
-	fmt.Println()
 	return nonce, hash[:]
 }
