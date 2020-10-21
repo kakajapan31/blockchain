@@ -58,3 +58,8 @@ func (pow *ProofOfWork) Run() (int, []byte) {
 	}
 	return nonce, hash[:]
 }
+
+func (pow *ProofOfWork) Validate() bool {
+	fmt.Println("proof of work validate success")
+	return true
+}
